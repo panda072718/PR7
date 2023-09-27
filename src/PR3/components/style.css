@@ -14,6 +14,69 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.menu-img1{
+    background-image: url('../images/breakfast-1.jpg');
+}
+.menu-img2{
+    background-image: url('../images/breakfast-2.jpg');
+}
+.menu-img3{
+    background-image: url('../images/breakfast-3.jpg');
+}
+.menu-img4{
+    background-image: url('../images/breakfast-5.jpg');
+}
+.menu-img5{
+    background-image: url('../images/breakfast-6.jpg');
+}
+.menu-img6{
+    background-image: url('../images/breakfast-2.jpg');
+}
+.chef-img1{
+    background-image: url('../images/chef-1.jpg');
+}
+.chef-img2{
+    background-image: url('../images/chef-2.jpg');
+}
+.chef-img3{
+    background-image: url('../images/chef-3.jpg');
+}
+.chef-img4{
+    background-image: url('../images/chef-4.jpg');
+}
+.reservation-img{
+    background-image: url('../images/bg_3.jpg.webp');
+}
+.customer-img1{
+    background-image: url('../images/person_1.jpg');
+}
+.customer-img2{
+    background-image: url('../images/person_2.jpg');
+}
+.customer-img3{
+    background-image: url('../images/person_3.jpg');
+}
+.wrap{
+    flex-wrap: wrap !important;
+}
+.footer-img1{
+    background-image: url("../images/insta-1.jpg");
+}
+.footer-img2{
+    background-image: url('../images/insta-2.jpg');
+}
+.footer-img3{
+    background-image: url('../images/insta-3.jpg');
+}
+.footer-img4{
+    background-image: url('../images/insta-4.jpg');
+}
+.footer-img5{
+    background-image: url('../images/insta-5.jpg');
+}
+.footer-img6{
+    background-image: url('../images/insta-6.jpg');
+}
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -57,7 +120,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+.fa-brands{
+    color: #c8a97e !important;
+}
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -13098,6 +13163,10 @@ textarea.form-control {
 
 .ftco-section {
     padding: 7em 0;
+    position: relative;
+}
+.ftco-sections {
+    padding: 7em 0 0 0;
     position: relative;
 }
 

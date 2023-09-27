@@ -1,0 +1,23 @@
+.pagination button{
+    margin-left: 20px !important;
+}
+/* .btn-prev{
+    margin-bottom: 10px;
+} */
+.pagination{
+    position: absolute;
+    top: 555px;
+    left: 335px;
+
+}
+
+.active-page {
+    background-color: #007bff ;    
+    color: white !important; 
+  }
+  
+  /* Add a style for the active pagination button */
+.active {
+    color: white; /* Change the text color to contrast with the background */
+  }
+  

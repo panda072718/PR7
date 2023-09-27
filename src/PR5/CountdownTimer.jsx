@@ -37,7 +37,6 @@ export default function CountdownTimer({ initialTime }) {
     setIsRunning(false);
     setTime(initialTimeValue);
   };
-
   return (
     <div>
       <h1>Countdown Timer</h1>
