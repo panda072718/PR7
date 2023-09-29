@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import Filter from './demo/Filter'
 import Project from "./PR4/Project";
 import CountdownTimer from "./PR5/CountdownTimer";
@@ -12,7 +12,16 @@ import Chef from "./PR3/components/Chef";
 import Reservation from "./PR3/components/Reservation";
 import Customer from "./PR3/components/Customer";
 import Footer from "./PR3/components/Footer";
+import CommentList from "./PR6/CommentList";
+import CommentForm from "./PR6/CommentForm";
 const App = () => {
+
+  const [comments, setComments] = useState([]);
+
+  const addComment = (comment) => {
+    
+    setComments([...comments, comment]);
+  };
   return (
     <>
       {/* PR5 */}
@@ -22,7 +31,7 @@ const App = () => {
      </div>  */}
 
       {/* Website PR3 */}
-      <Header />
+      {/* <Header />
       <About />
       <Count />
       <Services />
@@ -30,7 +39,15 @@ const App = () => {
       <Chef />
       <Reservation />
       <Customer />
-      <Footer />
+      <Footer /> */}
+
+
+      {/* PR6 */}
+
+      <div className="App">
+      <CommentForm addComment={addComment} />
+      <CommentList comments={comments} />
+    </div>
 
     </>
   );
