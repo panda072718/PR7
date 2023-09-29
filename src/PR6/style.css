@@ -1,0 +1,43 @@
+.user{
+    /* position: absolute;
+    top: 0; */
+}
+.username{
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid black;
+}
+.textarea{
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid black;
+}
+.submit{
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    /* margin: 20px; */
+    margin-left: 130px;
+    background-color: aquamarine;
+    color:aliceblue;
+    border: none;
+    margin-bottom: 20px;
+}
+h2{
+    margin-left: 10px;
+}
+.user{
+    margin-left:10px ;
+}
+.text{
+    margin-left:10px ;
+}
+/* .datetime{
+    position: absolute;
+    top: 290px;
+    left: 90px;
+} */

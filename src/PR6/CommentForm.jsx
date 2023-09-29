@@ -15,18 +15,23 @@ const CommentForm = ({ addComment }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="">UserName:-</label>
       <input
         type="text"
         placeholder="User Name"
-        value={user}
+        value={user} className='username'
         onChange={(e) => setUser(e.target.value)}
       />
-      <textarea
+      <br />
+      <label htmlFor="">Comment:-</label>
+      <input type='text'
         placeholder="Your Comment"
-        value={text}
+        value={text} className='textarea'
         onChange={(e) => setText(e.target.value)}
       />
-      <button type="submit">Add Comment</button>
+      <br />
+
+      <button type="submit" className='submit'>Add Comment</button>
     </form>
   );
 };
