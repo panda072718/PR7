@@ -14,19 +14,20 @@ import Customer from "./PR3/components/Customer";
 import Footer from "./PR3/components/Footer";
 import CommentList from "./PR6/CommentList";
 import CommentForm from "./PR6/CommentForm";
+import FormExample from "./Localsstorage/FormExample";
 const App = () => {
 
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
 
-  const addComment = (comment) => {
+  // const addComment = (comment) => {
     
-    setComments([...comments, comment]);
-  };
+  //   setComments([...comments, comment]);
+  // };
   return (
     <>
       {/* PR5 */}
-
-      {/* <div className="App">
+{/* 
+       <div className="App">
        <CountdownTimer initialTime={60} /> 
      </div>  */}
 
@@ -44,11 +45,17 @@ const App = () => {
 
       {/* PR6 */}
 
-      <div className="App">
+      {/* <div className="App">
       <CommentForm addComment={addComment} />
       <CommentList comments={comments} />
-    </div>
+    </div> */}
 
+
+
+
+            {/* local storage */}
+
+            <FormExample/>  
     </>
   );
 };
