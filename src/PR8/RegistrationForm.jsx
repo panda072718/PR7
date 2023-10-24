@@ -1,132 +1,15 @@
-import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
-import Table from "react-bootstrap/Table";
-import Dropdown from "react-bootstrap/Dropdown";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import "./style.css";
-import "./data.js";
+import react from 'react';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
 
-function FormExample() {
-  const [input, setInput] = useState({
-    name: "",
-    gender: "",
-    email: "",
-    number: "",
-    degree: "",
-    state: "",
-    district: "",
-    hobby: "",
-    address: "",
-  });
-  const [editId, setEditId] = useState(null);
-  const [isEdit, setIsEdit] = useState(false);
-  const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState({ name: "" });
+function RegistrationForm() {
+ 
 
-  // Password Validate
-  const validatePassword = () => {
-    if (password !== confirmPassword) {
-      setPasswordError("");
-      setConfirmPasswordError("");
-    } else {
-      setPasswordError("Passwords do not match");
-      setConfirmPasswordError("Passwords do not match");
-    }
-  };
-
-  // Retrvivng data from localstorage
-  const [data, setData] = useState(() => {
-    return JSON.parse(localStorage.getItem("student")) || [];
-  });
-  // Storing data in localstorage
-  useEffect(() => {
-    localStorage.setItem("student", JSON.stringify(data));
-  }, [data]);
-
-  const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors(validate());
-    const verify = validate();
-    if (verify.name || verify.email) {
-      setErrors(verify);
-    } else {
-      // Edit
-      if (isEdit) {
-        const oldData = [...data];
-        oldData[editId] = input;
-        setData(oldData);
-        setIsEdit(false);
-      } else {
-        setData([...data, input]);
-        setInput({ name: "" });
-      }
-    }
-  };
-
-  const handleEdit = (id) => {
-    setInput(data[id]);
-    setEditId(id);
-    setIsEdit(true);
-  };
-
-  // Delete
-  const handleDelete = (index) => {
-    const newData = [...data];
-    newData.splice(index, 1); // Remove the item at the specified index
-    setData(newData);
-  };
-
-  // validating form
-
-  const validate = () => {
-    const errors = {};
-    if (input.name.length < 1) {
-      errors.name = "Please Enter your Name";
-    }
-    if (input.email.length < 1) {
-      errors.email = "Please Enter your email";
-      // } if (input.password.length < 1) {
-      //   errors.password = 'Please Enter your Password';
-    }
-    if (input.number.length < 1) {
-      errors.number = "Please Enter your Number";
-    }
-    if (input.degree.length < 1) {
-      errors.degree = 'Please Select Course';
-    }
-    if (input.state.length < 1) {
-      errors.state = "Please Select State";
-    }
-    if (input.district.length < 1) {
-      errors.district = "Please Select district";
-    }
-    if (input.hobby.length < 1) {
-      errors.hobby = "Please Select hobby";
-    }
-    if (input.gender.length < 1) {
-      errors.gender = "Please Select Gender";
-    }
-    if (input.address.length < 1) {
-      errors.address = "Please Select district";
-    }
-
-    return errors;
-  };
-  
   return (
-    <>
-      <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           {/* Name */}
           <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -288,54 +171,7 @@ function FormExample() {
           </div>
         </Row>
       </Form>
-
-      <Table striped bordered hover className="mt-3">
-        <thead>
-          <tr>
-            <th> Name</th>
-            <th>Email</th>
-            <th>Number</th>
-            <th>Degree</th>
-            
-            <th>Gender</th>
-            <th>Hobby</th>
-            <th>Address</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data &&
-            data.map((student, index) => (
-              <tr>
-                <td>{student.name}</td>
-                <td>{student.email}</td>
-                <td>{student.number}</td>
-                <td>{student.degree}</td>
-                <td>{student.gender}</td>
-                <td>{student.hobby}</td>
-                <td>{student.address}</td>
-                <td>
-                  <button
-                    href=""
-                    className="btn btn-primary me-2"
-                    onClick={() => handleEdit(index)}
-                  >
-                    EDIT
-                  </button>
-                  <button
-                    href=""
-                    className="btn btn-danger me-2"
-                    onClick={() => handleDelete(index)}
-                  >
-                    DELETE
-                  </button>
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </Table>
-    </>
   );
 }
 
-export default FormExample;
+export default RegistrationForm;

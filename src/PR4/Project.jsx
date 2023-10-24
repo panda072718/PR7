@@ -8,7 +8,7 @@ export default function Project() {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 7; // Number of items to display per page
-
+  
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };

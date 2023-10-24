@@ -1,3 +1,4 @@
+import { useState } from "react";
 var data = {
   states: [
     {
@@ -879,36 +880,18 @@ var data = {
     },
   ],
 };
+const DistrictSelector = ({ data }) => {
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const districts =
+    data.states.find((state) => state.state === selectedState)?.districts || [];
 
-window.onload = function () {
-  const selectState = document.getElementById("state");
-  const selectDistrict = document.getElementById("district");
-  selectDistrict.disabled = true;
+  const handleStateChange = (e) => {
+    setSelectedState(e.target.value);
+    setSelectedDistrict("");
+  };
 
-  //Add State Value to State Select option
-  data.states.forEach((value) => {
-    selectState.appendChild(createOption(value.state, value.state));
-  });
-
-  selectState.addEventListener("change", function (e) {
-    selectDistrict.disabled = false;
-    data.states.forEach((detail, index) => {
-      //console.log(data.states[index].districts);
-      if (detail.state == e.target.value) {
-        selectDistrict.innerHTML = "";
-        selectDistrict.append(createOption("Select District", ""));
-        data.states[index].districts.forEach((district) => {
-          selectDistrict.append(createOption(district, district));
-        });
-      }
-    });
-  });
-
-  //Create New Option Tag With Value
-  function createOption(displayMember, valueMember) {
-    const newOption = document.createElement("option");
-    newOption.value = valueMember;
-    newOption.text = displayMember;
-    return newOption;
-  }
+  const handleDistrictChange = (e) => {
+    setSelectedDistrict(e.target.value);
+  };
 };
